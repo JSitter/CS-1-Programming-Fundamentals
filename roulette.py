@@ -58,15 +58,16 @@ def payout(leverage):
     '''returns total amount won or lost by user based on results of roll. '''
     global bet
     global bank_account
-    print("You won $" + str(bet * int(leverage)) + " *Ding* *Ding* *Ding*")
+    winnings = str(bet * leverage - bet)
+    print("You won $" + winnings + " *Ding* *Ding* *Ding*")
     bank_account = bank_account + bet * int(leverage)
     print("Your bank account has $" + str(bank_account))
 
 
 def spinning_animation():
-    spin_speed = .1
+    spin_speed = 0.0
     spinning = True
-    spin_times = 8
+    spin_times = 7
     spin_index = 0
     spinner = ['|', "/", "-", "\\"]
     os.system('clear')
